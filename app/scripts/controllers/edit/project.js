@@ -57,7 +57,7 @@ angular.module('openshiftConsole')
             $scope.actions.canSubmit = bool;
           },
           update: function() {
-            $scope.disableInputs = true;            
+            $scope.disableInputs = true;
             ProjectsService
               .update($routeParams.project, mergeEditable(project, $scope.editableFields))
               .then(function() {
@@ -72,7 +72,7 @@ angular.module('openshiftConsole')
                 $scope.editableFields = editableFields(project);
                 $scope.alerts["update"] = {
                   type: "error",
-                  message: "An error occurred while updating the project",
+                  message: "更新项目时出现错误",
                   details: $filter('getErrorDetails')(result)
                 };
               });

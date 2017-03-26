@@ -26,7 +26,7 @@ angular.module("openshiftConsole")
           $scope.alerts["deploy"] =
             {
               type: "success",
-              message: "Deployment #" + req.status.latestVersion + " of " + deploymentConfig.metadata.name + " has started.",
+              message: "部署 #" + req.status.latestVersion + " 于 " + deploymentConfig.metadata.name + " 已经启动.",
             };
         },
         function(result) {
@@ -34,7 +34,7 @@ angular.module("openshiftConsole")
           $scope.alerts["deploy"] =
             {
               type: "error",
-              message: "An error occurred while starting the deployment.",
+              message: "部署启动时出错.",
               details: $filter('getErrorDetails')(result)
             };
         }
@@ -62,7 +62,7 @@ angular.module("openshiftConsole")
                 $scope.alerts["retrydeployer"] =
                   {
                     type: "error",
-                    message: "An error occurred while deleting the deployer pod.",
+                    message: "删除部署的pod出现错误.",
                     details: $filter('getErrorDetails')(result)
                   };
               }
@@ -87,7 +87,7 @@ angular.module("openshiftConsole")
           $scope.alerts["retry"] =
             {
               type: "success",
-              message: "Retrying deployment " + deploymentName + " of " + deploymentConfigName + ".",
+              message:  "部署失败 " + deploymentName + " 属于 " + deploymentConfigName + ".",
             };
         },
         function(result) {
@@ -95,7 +95,7 @@ angular.module("openshiftConsole")
           $scope.alerts["retry"] =
             {
               type: "error",
-              message: "An error occurred while retrying the deployment.",
+              message: "部署重试出现错误.",
               details: $filter('getErrorDetails')(result)
             };
         }
@@ -132,7 +132,7 @@ angular.module("openshiftConsole")
               $scope.alerts["rollback"] =
                 {
                   type: "success",
-                  message: "Deployment #" + rolledBackDeploymentConfig.status.latestVersion + " is rolling back " + deploymentConfigName + " to " + deploymentName + ".",
+                  message:"部署 #" + rolledBackDeploymentConfig.status.latestVersion + " 正在回滚 " + deploymentConfigName + " 到" + deploymentName + ".",
                 };
             },
             function(result) {
@@ -140,7 +140,7 @@ angular.module("openshiftConsole")
               $scope.alerts["rollback"] =
                 {
                   type: "error",
-                  message: "An error occurred while rolling back the deployment.",
+                  message: "部署回滚出现错误.",
                   details: $filter('getErrorDetails')(result)
                 };
             }
@@ -151,7 +151,7 @@ angular.module("openshiftConsole")
           $scope.alerts["rollback"] =
             {
               type: "error",
-              message: "An error occurred while rolling back the deployment.",
+              message: "部署回滚中出现错误.",
               details: $filter('getErrorDetails')(result)
             };
         }
@@ -178,7 +178,7 @@ angular.module("openshiftConsole")
           $scope.alerts["cancel"] =
             {
               type: "success",
-              message: "Cancelled deployment " + deploymentName + " of " + deploymentConfigName + ".",
+              message: "取消部署 " + deploymentName + " 属于 " + deploymentConfigName + ".",
             };
         },
         function(result) {
@@ -186,7 +186,7 @@ angular.module("openshiftConsole")
           $scope.alerts["cancel"] =
             {
               type: "error",
-              message: "An error occurred while cancelling the deployment.",
+              message: "取消部署时出现错误.",
               details: $filter('getErrorDetails')(result)
             };
         }
@@ -323,7 +323,7 @@ angular.module("openshiftConsole")
       if (!resourceGroupVersion) {
         return $q.reject({
           data: {
-            message: "Cannot scale kind " + object.kind + "."
+            message: "不能衡量类别" + object.kind + "."
           }
         });
       }

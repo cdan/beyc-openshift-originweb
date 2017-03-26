@@ -166,7 +166,7 @@ angular.module('openshiftConsole')
                   name: $scope.routeName,
                   data: {
                     type: "success",
-                    message: "Route " + $scope.routeName + " was successfully updated."
+                    message: "路由 " + $scope.routeName + "已更新成功."
                   }
                 });
                 $location.path($scope.routeURL);
@@ -174,7 +174,7 @@ angular.module('openshiftConsole')
                 $scope.disableInputs = false;
                 $scope.alerts['update-route'] = {
                   type: "error",
-                  message: "An error occurred updating route " + $scope.routeName + ".",
+                  message: "更新 " + $scope.routeName + "路由时出现错误.",
                   details: $filter('getErrorDetails')(response)
                 };
               });

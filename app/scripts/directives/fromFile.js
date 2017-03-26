@@ -63,7 +63,7 @@ angular.module("openshiftConsole")
               modalConfig: function() {
                 return {
                   alerts: alerts,
-                  message: "We checked your application for potential problems. Please confirm you still want to create this application.",
+                  message: "我们检查您的应用具有潜在的问题。请确认你还想创建这个应用？.",
                   okButtonText: "Create Anyway",
                   okButtonClass: "btn-danger",
                   cancelButtonText: "Cancel"
@@ -194,13 +194,13 @@ angular.module("openshiftConsole")
           }
           if (!item.metadata) {
             $scope.error = {
-              message: "Resource is missing metadata field."
+              message: "资源缺失元数据字段."
             };
             return false;
           }
           if (!item.metadata.name) {
             $scope.error = {
-              message: "Resource name is missing in metadata field."
+              message: "元数据字段却是资源名称."
             };
             return false;
           }
@@ -323,7 +323,7 @@ angular.module("openshiftConsole")
                   name: resource.metadata.name,
                   data: {
                     type: "success",
-                    message: resource.kind + " " + resource.metadata.name + " was successfully created."
+                    message: resource.kind + " " + resource.metadata.name + " 已创建成功."
                   }
                 });
                 redirect();
@@ -332,7 +332,7 @@ angular.module("openshiftConsole")
               function(result) {
                 $scope.alerts["create"+resource.metadata.name] = {
                   type: "error",
-                  message: "Unable to create the " + humanizeKind(resource.kind) + " '" + resource.metadata.name + "'.",
+                  message: "无法创建 " + humanizeKind(resource.kind) + " '" + resource.metadata.name + "'.",
                   details: $filter('getErrorDetails')(result)
                 };
               });
@@ -345,7 +345,7 @@ angular.module("openshiftConsole")
                   name: resource.metadata.name,
                   data: {
                     type: "success",
-                    message: resource.kind + " " + resource.metadata.name + " was successfully updated."
+                    message: resource.kind + " " + resource.metadata.name + " 更新成功."
                   }
                 });
                 redirect();
@@ -354,7 +354,7 @@ angular.module("openshiftConsole")
               function(result) {
                 $scope.alerts["update"+resource.metadata.name] = {
                   type: "error",
-                  message: "Unable to update the " + humanizeKind(resource.kind) + " '" + resource.metadata.name + "'.",
+                  message: "无法更新 " + humanizeKind(resource.kind) + " '" + resource.metadata.name + "'.",
                   details: $filter('getErrorDetails')(result)
                 };
               });
@@ -383,7 +383,7 @@ angular.module("openshiftConsole")
                     function(failure) {
                       alerts.push({
                         type: "error",
-                        message: "Cannot create " + humanizeKind(failure.object.kind) + " \"" + failure.object.metadata.name + "\". ",
+                        message: "不能创建 " + humanizeKind(failure.object.kind) + " \"" + failure.object.metadata.name + "\". ",
                         details: failure.data.message
                       });
                     }
@@ -392,7 +392,7 @@ angular.module("openshiftConsole")
                     function(success) {
                       alerts.push({
                         type: "success",
-                        message: "Created " + humanizeKind(success.kind) + " \"" + success.metadata.name + "\" successfully. "
+                        message: "创建 " + humanizeKind(success.kind) + " \"" + success.metadata.name + "\" 成功. "
                       });
                     }
                   );
@@ -434,7 +434,7 @@ angular.module("openshiftConsole")
                     function(failure) {
                       alerts.push({
                         type: "error",
-                        message: "Cannot update " + humanizeKind(failure.object.kind) + " \"" + failure.object.metadata.name + "\". ",
+                        message: "不能更新 " + humanizeKind(failure.object.kind) + " \"" + failure.object.metadata.name + "\". ",
                         details: failure.data.message
                       });
                     }
@@ -443,7 +443,7 @@ angular.module("openshiftConsole")
                     function(success) {
                       alerts.push({
                         type: "success",
-                        message: "Updated " + humanizeKind(success.kind) + " \"" + success.metadata.name + "\" successfully. "
+                        message: "更新 " + humanizeKind(success.kind) + " \"" + success.metadata.name + "\" 成功. "
                       });
                     }
                   );
@@ -462,7 +462,7 @@ angular.module("openshiftConsole")
                 var alerts = [];
                 alerts.push({
                     type: "error",
-                    message: "An error occurred updating the resources.",
+                    message: "资源更新时出错.",
                     details: "Status: " + result.status + ". " + result.data
                   });
                 d.resolve({alerts: alerts});

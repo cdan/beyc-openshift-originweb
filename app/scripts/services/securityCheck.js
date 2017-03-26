@@ -39,7 +39,7 @@ angular.module("openshiftConsole")
         }));
         alerts.push({
           type: 'warning',
-          message: "This will create resources outside of the project, which might impact all users of the cluster.",
+          message:"工程外创建资源，可能影响集群中所有用户.",
           details: "Typically only cluster administrators can create these resources. The cluster-level resources being created are: " + clusterStrs.join(", ")
         });
       }
@@ -58,14 +58,14 @@ angular.module("openshiftConsole")
         roleBindingStrs = _.uniq(roleBindingStrs);
         alerts.push({
           type: 'warning',
-          message: "This will grant permissions to your project.",
+          message: "给你的功能授予权限.",
           details: "Permissions are being granted to: " + roleBindingStrs.join(", ")
         });
       }
       if (roleResources.length) {
         alerts.push({
           type: 'info',
-          message: "This will create additional membership roles within the project.",
+          message: "和工程创建额外的关系角色.",
           details: "Admins will be able to grant these custom roles to users, groups, and service accounts."
         });
       }
@@ -75,8 +75,8 @@ angular.module("openshiftConsole")
         }));
         alerts.push({
           type: 'warning',
-          message: "This will create resources that may have security or project behavior implications.",
-          details: "Make sure you understand what they do before creating them. The resources being created are: " + notWhitelistStrs.join(", ")
+          message: "将会创建资源可能有安全或者功能行为牵连.",
+          details: "确保你理解他们之前创建。被创建的资源: " + notWhitelistStrs.join(", ")
         });
       }
       return alerts;

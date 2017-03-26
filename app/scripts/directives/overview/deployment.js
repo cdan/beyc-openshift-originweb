@@ -26,7 +26,7 @@ angular.module('openshiftConsole')
             resumePending = false;
             $scope.alerts["resume-deployment"] = {
               type: "error",
-              message: "An error occurred resuming the deployment.",
+              message: "恢复部署出错.",
               details: $filter('getErrorDetails')(e)
             };
           });

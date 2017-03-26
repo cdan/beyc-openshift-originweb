@@ -79,7 +79,7 @@ angular.module('openshiftConsole')
       previousEnvConflict = true;
       $scope.alerts["env-conflict"] = {
         type: "warning",
-        message: "The environment variables for the deployment configuration have been updated in the background. Saving your changes may create a conflict or cause loss of data.",
+        message: "部署的环境变量配置已经在后台更新，保存您的变更可能会引起冲突或者数据丢失.",
         links: [
           {
             label: 'Reload Environment Variables',
@@ -146,13 +146,13 @@ angular.module('openshiftConsole')
                 $scope.alerts['saveDCEnvVarsSuccess'] = {
                   type: "success",
                   // TODO:  improve success alert
-                  message: $scope.deploymentConfigName + " was updated."
+                  message: $scope.deploymentConfigName + " 已经被更新."
                 };
                 $scope.forms.dcEnvVars.$setPristine();
               }, function error(e){
                 $scope.alerts['saveDCEnvVarsError'] = {
                   type: "error",
-                  message: $scope.deploymentConfigName + " was not updated.",
+                  message: $scope.deploymentConfigName + " 没有被更新.",
                   details: "Reason: " + $filter('getErrorDetails')(e)
                 };
               }).finally(function() {
@@ -170,7 +170,7 @@ angular.module('openshiftConsole')
               if (action === "DELETED") {
                 $scope.alerts["deleted"] = {
                   type: "warning",
-                  message: "This deployment configuration has been deleted."
+                  message: "部署配置已被删除."
                 };
               }
               var previous = $scope.deploymentConfig;
@@ -195,7 +195,7 @@ angular.module('openshiftConsole')
             $scope.loaded = true;
             $scope.alerts["load"] = {
               type: "error",
-              message: e.status === 404 ? "This deployment configuration can not be found, it may have been deleted." : "The deployment configuration details could not be loaded.",
+              message: e.status === 404 ? "未发现部署配置, 可能已被删除." : "T部署配置详细信息未被加载.",
               details: e.status === 404 ? "Any remaining deployment history for this deployment will be shown." : "Reason: " + $filter('getErrorDetails')(e)
             };
           }
@@ -360,7 +360,7 @@ angular.module('openshiftConsole')
           var showScalingError = function(result) {
             $scope.alerts["scale-error"] = {
               type: "error",
-              message: "An error occurred scaling the deployment config.",
+              message: "衡量部署配置时出现错误.",
               details: $filter('getErrorDetails')(result)
             };
           };
@@ -377,7 +377,7 @@ angular.module('openshiftConsole')
               $scope.updatingPausedState = false;
               $scope.alerts["pause-error"] = {
                 type: "error",
-                message: "An error occurred " + (paused ? "pausing" : "resuming") + " the deployment config.",
+                message: " " + (paused ? "pausing" : "resuming") + "  部署配置时出现错误.",
                 details: $filter('getErrorDetails')(e)
               };
             });
@@ -395,21 +395,21 @@ angular.module('openshiftConsole')
         $scope.removeVolume = function(volume) {
           var details;
           if (isConfigChangeActive()) {
-            details = "This will remove the volume from the deployment config and trigger a new deployment.";
+            details = "这将删除部署配置中的卷标并且触发一个新的部署.";
           } else {
-            details = "This will remove the volume from the deployment config.";
+            details = "这将删除在部属配置中的卷标.";
           }
 
           if (volume.persistentVolumeClaim) {
-            details += " It will not delete the persistent volume claim.";
+            details += " 持久的卷标声明不能被删除.";
           } else if (volume.secret) {
-            details += " It will not delete the secret.";
+            details += " 机密将不被删除.";
           } else if (volume.configMap) {
-            details += " It will not delete the config map.";
+            details += " 配置图将不被删除.";
           }
 
           var confirm = ModalsService.confirm({
-            message: "Remove volume " + volume.name + "?",
+            message: "确定删除卷标 " + volume.name + "?",
             details: details,
             okButtonText: "Remove",
             okButtonClass: "btn-danger",
@@ -419,7 +419,7 @@ angular.module('openshiftConsole')
           var showError = function(e) {
             $scope.alerts["remove-volume-error"] = {
               type: "error",
-              message: "An error occurred removing the volume.",
+              message:  "删除卷标时出现错误.",
               details: $filter('getErrorDetails')(e)
             };
           };

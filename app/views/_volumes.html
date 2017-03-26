@@ -15,7 +15,7 @@
       <dt>Type:</dt>
       <dd>
         secret
-        <span class="small text-muted">(populated by a secret when the pod is created)</span>
+        <span class="small text-muted">(当pod建立时被一个机密构成)</span>
       </dd>
       <dt>Secret:</dt>
       <dd>
@@ -35,7 +35,7 @@
       <dt>Type:</dt>
       <dd>
         persistent volume claim
-        <span class="small text-muted">(reference to a persistent volume claim)</span>
+        <span class="small text-muted">(参考一个固定卷声明)</span>
       </dd>
       <dt>Claim name:</dt>
       <dd><a ng-href="{{volume.persistentVolumeClaim.claimName | navigateResourceURL : 'PersistentVolumeClaim' : namespace}}">{{volume.persistentVolumeClaim.claimName}}</a></dd>
@@ -49,7 +49,7 @@
       <dt>Type:</dt>
       <dd>
         host path
-        <span class="small text-muted">(bare host directory volume)</span>
+        <span class="small text-muted">(显示主机文件夹卷)</span>
        </dd>
       <dt>Path:</dt>
       <dd>{{volume.hostPath.path}}</dd>
@@ -58,7 +58,7 @@
       <dt>Type:</dt>
       <dd>
         empty dir
-       <span class="small text-muted">(temporary directory destroyed with the pod)</span>
+       <span class="small text-muted">(临时文件夹和pod同时销毁)</span>
        </dd>
       <dt>Medium:</dt>
       <dd>
@@ -70,7 +70,7 @@
       <dt>Type:</dt>
       <dd>
         git repo
-       <span class="small text-muted">(pulled from git when the pod is created)</span>
+       <span class="small text-muted">(当pod创建的时候从git拉取)</span>
       </dd>
       <dt>Repository:</dt>
       <dd>{{volume.gitRepo.repository}}</dd>
@@ -81,7 +81,7 @@
       <dt>Type:</dt>
       <dd>
         downward API
-        <span class="small text-muted">(populated with information about the pod)</span>
+        <span class="small text-muted">(生成关于pod的信息)</span>
        </dd>
       <div ng-repeat="item in volume.downwardAPI.items">
         <dt>Volume File:</dt>
@@ -92,7 +92,7 @@
       <dt>Type:</dt>
       <dd>
         config map
-        <span class="small text-muted">(populated by a config map)</span>
+        <span class="small text-muted">(生成一个配置映射关系图)</span>
        </dd>
       <dt>Config Map:</dt>
       <dd><a ng-href="{{volume.configMap.name | navigateResourceURL : 'ConfigMap' : namespace}}">{{volume.configMap.name}}</a></dd>

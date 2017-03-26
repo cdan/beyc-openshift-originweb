@@ -314,13 +314,13 @@ angular.module('openshiftConsole')
               if (action === 'MODIFIED') {
                 $scope.alerts["updated/deleted"] = {
                   type: "warning",
-                  message: "This build configuration has changed since you started editing it. You'll need to copy any changes you've made and edit again."
+                  message: "自从你编辑时构建配置信息已被更改，你需要复制你更改的内容并且再次编辑它."
                 };
               }
               if (action === "DELETED") {
                 $scope.alerts["updated/deleted"] = {
                   type: "warning",
-                  message: "This build configuration has been deleted."
+                  message: "构建配置已经被删除."
                 };
                 $scope.disableInputs = true;
               }
@@ -333,7 +333,7 @@ angular.module('openshiftConsole')
             $scope.loaded = true;
             $scope.alerts["load"] = {
               type: "error",
-              message: "The build configuration details could not be loaded.",
+              message: "构建配置详细信息不能被加载.",
               details: "Reason: " + $filter('getErrorDetails')(e)
             };
           }
@@ -567,7 +567,7 @@ angular.module('openshiftConsole')
             name: $scope.updatedBuildConfig.metadata.name,
             data: {
               type: "success",
-              message: "Build Config " + $scope.updatedBuildConfig.metadata.name + " was successfully updated."
+              message: "构建配置 " + $scope.updatedBuildConfig.metadata.name + " 更新成功."
             }
           });
           $location.path(Navigate.resourceURL($scope.updatedBuildConfig, "BuildConfig", $scope.updatedBuildConfig.metadata.namespace));
@@ -577,7 +577,7 @@ angular.module('openshiftConsole')
 
           $scope.alerts["save"] = {
             type: "error",
-            message: "An error occurred updating the build " + $scope.updatedBuildConfig.metadata.name + "Build Config",
+            message:  "构建配置 " + $scope.updatedBuildConfig.metadata.name + "构建时出现错误",
             details: $filter('getErrorDetails')(result)
           };
         }

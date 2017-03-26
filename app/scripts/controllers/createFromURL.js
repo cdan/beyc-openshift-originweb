@@ -21,49 +21,49 @@ angular.module('openshiftConsole')
     var alertInvalidImageStream = function(imageStream) {
       $scope.alerts.invalidImageStream = {
         type: "error",
-        message: "The requested image stream \"" + imageStream + "\" could not be loaded."
+        message: "请求的镜像流 \"" + imageStream + "\" 不能被加载."
       };
     };
 
     var alertInvalidImageTag = function(imageTag) {
       $scope.alerts.invalidImageTag = {
         type: "error",
-        message: "The requested image stream tag \"" + imageTag + "\" could not be loaded."
+        message: "请求的镜像流标签 \"" + imageTag + "\" 不能被加载."
       };
     };
 
     var alertInvalidName = function(name) {
       $scope.alerts.invalidImageStream = {
         type: "error",
-        message: "The app name \"" + name + "\" is not valid.  An app name is an alphanumeric (a-z, and 0-9) string with a maximum length of 24 characters, where the first character is a letter (a-z), and the '-' character is allowed anywhere except the first or last character."
+        message: "应用名称 \"" + name + "\" 校验未通过.  应用名字是由字母数字(a-z和数字0-9)组成的一个混合的长度为24位的字符串，且字符创中的第一个字符是(a-z)中的一个，且"-"允许在这个字符串中除了第一个和最后一个的任何位置"
       };
     };
 
     var alertInvalidNamespace = function(namespace) {
       $scope.alerts.invalidNamespace = {
         type: "error",
-        message: "Resources from the namespace \"" + namespace + "\" are not permitted."
+        message:"命名空间 \"" + namespace + "\" 的资源不允许使用."
       };
     };
 
     var alertInvalidTemplate = function(template) {
       $scope.alerts.invalidTemplate = {
         type: "error",
-        message: "The requested template \"" + template + "\" could not be loaded."
+        message:  "模版 \"" + template + "\" 不能被加载."
       };
     };
 
     var alertResourceRequired = function() {
       $scope.alerts.resourceRequired = {
         type: "error",
-        message: "An image stream or template is required."
+        message: "镜像或模版正在被访问."
       };
     };
 
     var showInvalidResource = function() {
       $scope.alerts.invalidResource = {
         type: "error",
-        message: "Image streams and templates cannot be combined."
+        message: "镜像流和模版不匹配."
       };
     };
 
@@ -74,7 +74,7 @@ angular.module('openshiftConsole')
       catch (e) {
         $scope.alerts.invalidTemplateParams = {
           type: "error",
-          message: "The templateParamsMap is not valid JSON. " + e
+          message: "参数模版JSON格式不正确. " + e
         };
       }
     };

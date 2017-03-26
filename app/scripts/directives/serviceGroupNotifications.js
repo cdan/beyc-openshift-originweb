@@ -38,7 +38,7 @@ angular.module('openshiftConsole')
             }
             alerts[id] = {
               type: "info",
-              message: object.metadata.name + " has containers without health checks, which ensure your application is running correctly.",
+              message: object.metadata.name + " 没有健康检查,确保您的应用程序运行正确吗？.",
               onClose: function() {
                 hideAlert(id);
               }
@@ -80,7 +80,7 @@ angular.module('openshiftConsole')
           case 'Cancelled':
             alerts[mostRecentRC.metadata.uid + '-cancelled'] = {
               type: 'info',
-              message: 'Deployment ' + displayName + ' was cancelled.',
+              message: '部署 ' + displayName + '已被取消.',
               links: [{
                 href: rcLink,
                 label: 'View Deployment'
@@ -98,7 +98,7 @@ angular.module('openshiftConsole')
             logLink = URI(rcLink).addSearch({ tab: "logs" }).toString();
             alerts[mostRecentRC.metadata.uid + '-failed'] = {
               type: 'error',
-              message: 'Deployment ' + displayName + ' failed.',
+              message: '部署 ' + displayName + ' 失败.',
               reason: annotation(mostRecentRC, 'openshift.io/deployment.status-reason'),
               links: [{
                 href: logLink,

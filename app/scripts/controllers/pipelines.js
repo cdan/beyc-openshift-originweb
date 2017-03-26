@@ -136,7 +136,7 @@ angular.module('openshiftConsole')
               function reject(result) {
                 $scope.alerts["start-build"] = {
                   type: "error",
-                  message: "An error occurred while starting the build.",
+                  message: "构建启动的时候出现错误.",
                   details: $filter('getErrorDetails')(result)
                 };
               });

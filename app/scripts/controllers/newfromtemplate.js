@@ -87,7 +87,7 @@ angular.module('openshiftConsole')
       catch (e) {
         $scope.alerts.invalidTemplateParams = {
           type: "error",
-          message: "The templateParamsMap is not valid JSON. " + e
+          message: "参数模版不是正确的JSON格式. " + e
         };
       }
     };
@@ -259,7 +259,7 @@ angular.module('openshiftConsole')
                     function(failure) {
                       alerts.push({
                         type: "error",
-                        message: "Cannot create " + humanize(failure.object.kind).toLowerCase() + " \"" + failure.object.metadata.name + "\". ",
+                        message: "不能创建 " + humanize(failure.object.kind).toLowerCase() + " \"" + failure.object.metadata.name + "\". ",
                         details: failure.data.message
                       });
                     }
@@ -268,12 +268,12 @@ angular.module('openshiftConsole')
                     function(success) {
                       alerts.push({
                         type: "success",
-                        message: "Created " + humanize(success.kind).toLowerCase() + " \"" + success.metadata.name + "\" successfully. "
+                        message: "创建 " + humanize(success.kind).toLowerCase() + " \"" + success.metadata.name + "\" 成功. "
                       });
                     }
                   );
                 } else {
-                  alerts.push({ type: "success", message: "All items in template " + $scope.templateDisplayName() +
+                  alerts.push({ type:"所有项目在模版 " + $scope.templateDisplayName() +
                     " were created successfully."});
                 }
                 d.resolve({alerts: alerts, hasErrors: hasErrors});
@@ -293,7 +293,7 @@ angular.module('openshiftConsole')
               modalConfig: function() {
                 return {
                   alerts: alerts,
-                  message: "We checked your application for potential problems. Please confirm you still want to create this application.",
+                  message: "我们检测到您的应用具有潜在的问题. 请确实您是否仍然要创建这个应用.",
                   okButtonText: "Create Anyway",
                   okButtonClass: "btn-danger",
                   cancelButtonText: "Cancel"
@@ -348,7 +348,7 @@ angular.module('openshiftConsole')
               $scope.alerts["process"] =
                 {
                   type: "error",
-                  message: "An error occurred processing the template.",
+                  message: "模版处理出现错误.",
                   details: details
                 };
             }

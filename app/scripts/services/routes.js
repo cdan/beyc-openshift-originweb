@@ -67,7 +67,7 @@ angular.module("openshiftConsole")
       angular.forEach(route.status.ingress, function(ingress) {
         var condition = _.find(ingress.conditions, { type: "Admitted", status: "False" });
         if (condition) {
-          var message = 'Requested host ' + (ingress.host || '<unknown host>') + ' was rejected by the router.';
+          var message = '被请求的主机' + (ingress.host || '<unknown host>') + '被路由拒绝.';
           if (condition.message || condition.reason) {
             message += " Reason: " + (condition.message || condition.reason) + '.';
           }

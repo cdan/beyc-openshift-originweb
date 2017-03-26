@@ -71,7 +71,7 @@ angular.module('openshiftConsole')
       previousEnvConflict = true;
       $scope.alerts["env-conflict"] = {
         type: "warning",
-        message: "The environment variables for the deployment have been updated in the background. Saving your changes may create a conflict or cause loss of data.",
+        message:"部署的环境变量已经被升级到界面中。保存你的修改可能会造成冲突或者引起数据的丢失.",
         links: [
           {
             label: 'Reload Environment Variables',
@@ -135,13 +135,13 @@ angular.module('openshiftConsole')
                 // is made.
                 $scope.alerts['saveEnvSuccess'] = {
                   type: "success",
-                  message: $routeParams.deployment + " was updated."
+                  message: $routeParams.deployment + "已更新."
                 };
                 $scope.forms.deploymentEnvVars.$setPristine();
               }, function error(e){
                 $scope.alerts['saveEnvError'] = {
                   type: "error",
-                  message: $routeParams.deployment + " was not updated.",
+                  message: $routeParams.deployment + " 没有被更新.",
                   details: "Reason: " + $filter('getErrorDetails')(e)
                 };
               }).finally(function() {
@@ -163,7 +163,7 @@ angular.module('openshiftConsole')
               if (action === "DELETED") {
                 $scope.alerts["deleted"] = {
                   type: "warning",
-                  message: "This deployment has been deleted."
+                  message: "部署已被删除."
                 };
               }
 
@@ -206,7 +206,7 @@ angular.module('openshiftConsole')
             $scope.loaded = true;
             $scope.alerts["load"] = {
               type: "error",
-              message: e.status === 404 ? "This deployment can not be found, it may have been deleted." : "The deployment details could not be loaded.",
+              message: e.status === 404 ? "没有发现调度, 可能已被删除." : "部署详细信息不能被加载.",
               details: e.status === 404 ? "Any remaining deployment history for this deployment will be shown." : "Reason: " + $filter('getErrorDetails')(e)
             };
           }
@@ -274,7 +274,7 @@ angular.module('openshiftConsole')
             $scope.alerts = $scope.alerts || {};
             $scope.alerts["scale"] = {
               type: "error",
-              message: "An error occurred scaling the deployment.",
+              message: "衡量部署时出现错误.",
               details: $filter('getErrorDetails')(result)
             };
           };
@@ -293,7 +293,7 @@ angular.module('openshiftConsole')
               $scope.alerts = $scope.alerts || {};
               $scope.alerts["scale"] = {
                 type: "error",
-                message: "An error occurred " + (paused ? "pausing" : "resuming") + " the deployment.",
+                message: "" + (paused ? "pausing" : "resuming") + " 部署时出现错误.",
                 details: $filter('getErrorDetails')(e)
               };
             });
@@ -316,7 +316,7 @@ angular.module('openshiftConsole')
           }
 
           var confirm = ModalsService.confirm({
-            message: "Remove volume " + volume.name + "?",
+            message: "确定删除卷标 " + volume.name + "?",
             details: details,
             okButtonText: "Remove",
             okButtonClass: "btn-danger",
@@ -326,7 +326,7 @@ angular.module('openshiftConsole')
           var showError = function(e) {
             $scope.alerts["remove-volume-error"] = {
               type: "error",
-              message: "An error occurred removing the volume.",
+              message: "删除卷标时出现错误.",
               details: $filter('getErrorDetails')(e)
             };
           };

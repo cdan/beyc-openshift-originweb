@@ -44,7 +44,7 @@ angular.module('openshiftConsole')
               if (action === "DELETED") {
                 $scope.alerts["deleted"] = {
                   type: "warning",
-                  message: "This image stream has been deleted."
+                  message:  "镜像流已经被删除."
                 };
               }
               $scope.imageStream = imageStream;
@@ -56,7 +56,7 @@ angular.module('openshiftConsole')
             $scope.loaded = true;
             $scope.alerts["load"] = {
               type: "error",
-              message: "The image stream details could not be loaded.",
+              message: "镜像流详情不能被加载.",
               details: "Reason: " + $filter('getErrorDetails')(e)
             };
           });

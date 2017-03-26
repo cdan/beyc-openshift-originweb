@@ -84,7 +84,7 @@ angular.module('openshiftConsole')
       if (action === "DELETED") {
         $scope.alerts["deleted"] = {
           type: "warning",
-          message: "This build has been deleted."
+          message: "构建已被删除."
         };
       }
     };
@@ -93,8 +93,8 @@ angular.module('openshiftConsole')
       $scope.loaded = true;
       $scope.alerts["load"] = {
         type: "error",
-        message: "The build details could not be loaded.",
-        details: "Reason: " + $filter('getErrorDetails')(e)
+        message: "构建细节无法加载.",
+        details: "原因: " + $filter('getErrorDetails')(e)
       };
     };
 
@@ -102,7 +102,7 @@ angular.module('openshiftConsole')
       if (action === "DELETED") {
         $scope.alerts["deleted"] = {
           type: "warning",
-          message: "Build configuration " + $scope.buildConfigName + " has been deleted."
+          message: "构建配置 " + $scope.buildConfigName + " 已被删除."
         };
         $scope.buildConfigDeleted = true;
       }
@@ -141,13 +141,13 @@ angular.module('openshiftConsole')
               // TODO: common alerts service to eliminate duplication
               $scope.alerts["cancel"] = {
                 type: "success",
-                message: "Cancelled build " + build.metadata.name + " of " + $scope.buildConfigName + "."
+                message: "取消构建 " + build.metadata.name + " of " + $scope.buildConfigName + "."
               };
             }, function reject(result) {
               // TODO: common alerts service to eliminate duplication
               $scope.alerts["cancel"] = {
                 type: "error",
-                message: "An error occurred cancelling the build.",
+                message: "出现错误，取消构建..",
                 details: $filter('getErrorDetails')(result)
               };
             });
@@ -187,13 +187,13 @@ angular.module('openshiftConsole')
                 var links = getLinksClonedBuild(build);
                 $scope.alerts["rebuild"] = {
                   type: "success",
-                  message: "Build " + name + " is being rebuilt as " + build.metadata.name + ".",
+                  message: "构建 " + name + " 正在被" + build.metadata.name + "重构建.",
                   links: links
                 };
               }, function reject(result) {
                 $scope.alerts["rebuild"] = {
                   type: "error",
-                  message: "An error occurred while rerunning the build.",
+                  message: "构建过程出现错误.",
                   details: $filter('getErrorDetails')(result)
                 };
               });

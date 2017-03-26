@@ -80,10 +80,10 @@ angular.module("openshiftConsole")
           details = "You can still create " + humanizeKind(resource.kind) + " '" + resource.metadata.name + "' but no pods will be created until resources are freed.";
         }
         if (type === "pods") {
-          message = 'You are at your quota for pods.';
+          message ='你在你给pods的配额中.';
         }
         else {
-          message = 'You are at your quota for ' + humanizeQuotaResource(type) + ' on pods.';
+          message = '你在你的pods配额中 ' + humanizeQuotaResource(type) + '.';
         }
         return {
           type: resource.kind === 'Pod' ? 'error' : 'warning',
@@ -128,7 +128,7 @@ angular.module("openshiftConsole")
         }
         return {
           type: 'warning',
-          message: 'You are close to your quota for ' + humanizeQuotaResource(type) + " on pods.",
+          message:  '你已经接近你在pod上的配额' + humanizeQuotaResource(type) + " .",
           details: detail,
           links: [{
             href: "project/" + quota.metadata.namespace + "/quota",
@@ -206,9 +206,9 @@ angular.module("openshiftConsole")
           if(!isNil(q.hard[quotaKey]) && usageValue(q.hard[quotaKey]) <= usageValue(q.used[quotaKey])) {
             alerts.push({
               type: 'error',
-              message: "You are at your quota of " + q.hard[quotaKey] + " " + (q.hard[quotaKey] === "1" ? humanizedKind : humanizedResource) +
-                        " in this project.",
-              details: "You will not be able to create the " + humanizedKind + " '" + resource.metadata.name + "'.",
+              message: "你的配额中 " + q.hard[quotaKey] + " " + (q.hard[quotaKey] === "1" ? humanizedKind : humanizedResource) +
+                        " 在这个项目里.",
+              details: "你将不被允许去创建 " + humanizedKind + " '" + resource.metadata.name + "'.",
               links: [{
                 href: "project/" + quota.metadata.namespace + "/quota",
                 label: "View Quota",

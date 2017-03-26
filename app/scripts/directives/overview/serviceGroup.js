@@ -69,7 +69,7 @@ angular.module('openshiftConsole')
                 $scope.alerts["link-service"] =
                   {
                     type: "error",
-                    message: "Could not link services.",
+                    message: "无法连接服务.",
                     details: $filter('getErrorDetails')(result)
                   };
               });
@@ -84,7 +84,7 @@ angular.module('openshiftConsole')
             resolve: {
               modalConfig: function() {
                 return {
-                  message: "Remove service '" + service.metadata.name + "' from group?",
+                  message: "确定从组中删除服务 '" + service.metadata.name + "'?",
                   details: "Services '" +
                            $scope.primaryService.metadata.name +
                            "' and '" +
@@ -107,7 +107,7 @@ angular.module('openshiftConsole')
                 $scope.alerts = $scope.alerts || {};
                 $scope.alerts["remove-service-link"] = {
                   type: "error",
-                  message: "Could not remove service link.",
+                  message:  "不能删除服务连接.",
                   details: $filter('getErrorDetails')(result)
                 };
               }

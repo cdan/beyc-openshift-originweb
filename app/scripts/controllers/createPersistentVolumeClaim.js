@@ -63,7 +63,7 @@ angular.module('openshiftConsole')
                 $scope.disableInputs = false;
                 $scope.alerts['create-persistent-volume-claim'] = {
                     type: "error",
-                    message: "An error occurred requesting storage claim.",
+                    message: "存储声明被请求时出现错误.",
                     details: $filter('getErrorDetails')(result)
                 };
               });

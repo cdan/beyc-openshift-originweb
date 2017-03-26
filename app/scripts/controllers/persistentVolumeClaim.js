@@ -32,7 +32,7 @@ angular.module('openshiftConsole')
       if (action === "DELETED") {
         $scope.alerts["deleted"] = {
           type: "warning",
-          message: "This persistent volume claim has been deleted."
+          message: "持久卷声明已经被删除."
         };
       }
     };
@@ -50,7 +50,7 @@ angular.module('openshiftConsole')
           $scope.loaded = true;
           $scope.alerts["load"] = {
             type: "error",
-            message: "The persistent volume claim details could not be loaded.",
+            message: "持久的卷声明详情不能被加载.",
             details: "Reason: " + $filter('getErrorDetails')(e)
           };
         });

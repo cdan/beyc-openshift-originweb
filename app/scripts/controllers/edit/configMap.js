@@ -57,7 +57,7 @@ angular.module('openshiftConsole')
             $scope.loaded = true;
             $scope.alerts["load"] = {
               type: "error",
-              message: "The config map details could not be loaded.",
+              message:"配置图详情不能被加载.",
               details: $filter('getErrorDetails')(e)
             };
           });
@@ -74,7 +74,7 @@ angular.module('openshiftConsole')
                 $scope.disableInputs = false;
                 $scope.alerts['create-config-map'] = {
                   type: "error",
-                  message: "An error occurred updating the config map.",
+                  message: "配置图更新时出现错误.",
                   details: $filter('getErrorDetails')(result)
                 };
               });

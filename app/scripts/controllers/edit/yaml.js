@@ -122,7 +122,7 @@ angular.module('openshiftConsole')
 
               if (updatedResource.kind !== resource.kind) {
                 $scope.error = {
-                  message: 'Cannot change resource kind (original: ' + resource.kind + ', modified: ' + (updatedResource.kind || '<unspecified>') + ').'
+                  message: '不能改变资源种类 (original: ' + resource.kind + ', modified: ' + (updatedResource.kind || '<unspecified>') + ').'
                 };
                 return;
               }
@@ -134,7 +134,7 @@ angular.module('openshiftConsole')
                 return;
               }
               if (updatedGroupVersion.group !== groupVersion.group) {
-                $scope.error = { message: 'Cannot change resource group (original: ' + (groupVersion.group || '<none>') + ', modified: ' + (updatedGroupVersion.group || '<none>') + ').' };
+                $scope.error = { message:  '不能改变路由组 (original: ' + (groupVersion.group || '<none>') + ', modified: ' + (updatedGroupVersion.group || '<none>') + ').' };
                 return;
               }
               if (!APIService.apiInfo(updatedGroupVersion)) {
@@ -153,7 +153,7 @@ angular.module('openshiftConsole')
                   if (newResourceVersion === editedResourceVersion) {
                     $scope.alerts['no-changes-applied'] = {
                       type: "warning",
-                      message: "No changes were applied to " + humanizeKind($routeParams.kind) + " " + $routeParams.name + ".",
+                      message: "没有修改被用于 " + humanizeKind($routeParams.kind) + " " + $routeParams.name + ".",
                       details: "Make sure any new fields you may have added are supported API fields."
                     };
                     $scope.updatingNow = false;
@@ -164,7 +164,7 @@ angular.module('openshiftConsole')
                     name: 'edit-yaml',
                     data: {
                       type: "success",
-                      message: humanizeKind($routeParams.kind, true) + " " + $routeParams.name + " was successfully updated."
+                      message:humanizeKind($routeParams.kind, true) + " " + $routeParams.name + " 更新成功."
                     }
                   });
                   navigateBack();

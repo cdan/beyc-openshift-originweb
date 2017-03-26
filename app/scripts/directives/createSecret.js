@@ -160,14 +160,14 @@ angular.module("openshiftConsole")
             updatedSA.imagePullSecrets.push({name: secret.metadata.name});
             break;
           }
-          // Don't show any error related to linking to SA when linking is done automatically 
+          // Don't show any error related to linking to SA when linking is done automatically
           var options = $scope.serviceAccountToLink ? {errorNotification: false} : {};
           DataService.update('serviceaccounts', $scope.newSecret.pickedServiceAccountToLink, updatedSA, $scope, options).then(function(sa) {
             alerts.push({
               name: 'create',
               data: {
                 type: "success",
-                message: "Secret " + secret.metadata.name + " was created and linked with service account " + sa.metadata.name + "."
+                message: "机密 " + secret.metadata.name + "已被创建并且链接到服务账户 " + sa.metadata.name + "."
               }
             });
             $scope.postCreateAction({newSecret: secret, creationAlert: alerts});
@@ -176,7 +176,7 @@ angular.module("openshiftConsole")
               name: 'createAndLink',
               data: {
                 type: "error",
-                message: "An error occurred while linking the secret with service account " + $scope.newSecret.pickedServiceAccountToLink + ".",
+                message: "机密链接到服务账户 " + $scope.newSecret.pickedServiceAccountToLink + "时出现错误.",
                 details: $filter('getErrorDetails')(result)
               }
             });
@@ -205,7 +205,7 @@ angular.module("openshiftConsole")
               name: 'create',
               data: {
                 type: "success",
-                message: "Secret " + newSecret.metadata.name + " was created."
+                message: "机密 " + newSecret.metadata.name + " was 创建."
               }
             }];
             // In order to link:
@@ -226,7 +226,7 @@ angular.module("openshiftConsole")
             }
             $scope.alerts["create"] = {
               type: "error",
-              message: "An error occurred while creating the secret.",
+              message: "创建机密时出现问题.",
               details: $filter('getErrorDetails')(result)
             };
           });

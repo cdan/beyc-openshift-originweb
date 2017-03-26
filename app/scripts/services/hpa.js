@@ -134,8 +134,8 @@ angular.module("openshiftConsole")
         var warnings = [];
         if (!metricsAvailable) {
           warnings.push({
-            message: 'Metrics might not be configured by your cluster administrator. ' +
-                     'Metrics are required for autoscaling.',
+            message:'指标不能由您的集群管理员进行配置. ' +
+                     '已达到缩容限额.',
             reason: 'MetricsNotAvailable'
           });
         }
@@ -163,9 +163,8 @@ angular.module("openshiftConsole")
 
         if (_.size(hpaResources) > 1) {
           warnings.push({
-            message: 'More than one autoscaler is scaling this resource. ' +
-                     'This is not recommended because they might compete with each other. ' +
-                     'Consider removing all but one autoscaler.',
+            message: '多个指标衡量资源. ' +
+                     '这是不推荐,因为他们可能会互相竞争。考虑删除所有除自动定量',
             reason: 'MultipleHPA'
           });
         }
@@ -183,8 +182,8 @@ angular.module("openshiftConsole")
             hasDeploymentConfig(scaleTarget) &&
             _.some(hpaResources, targetsRC)) {
           warnings.push({
-            message: 'This deployment is scaled by both a deployment configuration and an autoscaler. ' +
-                     'This is not recommended because they might compete with each other.',
+            message: '这个部署是按照比例缩容一个部属配置和一个自动定量.' +
+            '部署由部署配置和定标器共同衡量决定. ',
             reason: 'DeploymentHasHPA'
           });
         }

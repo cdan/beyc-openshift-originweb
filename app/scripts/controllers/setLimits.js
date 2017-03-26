@@ -106,7 +106,7 @@ angular.module('openshiftConsole')
                     name: $scope.name,
                     data: {
                       type: "success",
-                      message: displayName + " was updated."
+                      message:displayName + " 已更新."
                     }
                   });
                   $location.url($scope.resourceURL);

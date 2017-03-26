@@ -43,7 +43,7 @@ angular.module('openshiftConsole')
     ];
     $scope.terminalDisconnectAlert["disconnect"] = {
       type: "warning",
-      message: "This terminal has been disconnected. If you reconnect, your terminal history will be lost."
+      message: "这个终端已经断开连接。如果你连接,你的终端历史记录将丢失。"
     };
 
     $scope.noContainersYet = true;
@@ -246,7 +246,7 @@ angular.module('openshiftConsole')
       if (action === "DELETED") {
         $scope.alerts["deleted"] = {
           type: "warning",
-          message: "This pod has been deleted."
+          message: "这个Pod已经被删除."
         };
       }
     };
@@ -278,7 +278,7 @@ angular.module('openshiftConsole')
             $scope.loaded = true;
             $scope.alerts["load"] = {
               type: "error",
-              message: "The pod details could not be loaded.",
+              message: "pod详情不能被加载.",
               details: "Reason: " + $filter('getErrorDetails')(e)
             };
           });
@@ -323,7 +323,7 @@ angular.module('openshiftConsole')
               function(result) {
                 $scope.alerts['debug-container-error'] = {
                   type: "error",
-                  message: "Could not delete pod " + debugPod.metadata.name,
+                  message:  "不能删除pod " + debugPod.metadata.name,
                   details: "Reason: " + $filter('getErrorDetails')(result)
                 };
               });
@@ -351,7 +351,7 @@ angular.module('openshiftConsole')
           if (!debugPod) {
             $scope.alerts['debug-container-error'] = {
               type: "error",
-              message: "Could not debug container " + containerName
+              message: "不能调试容器 " + containerName
             };
             return;
           }
@@ -401,7 +401,7 @@ angular.module('openshiftConsole')
             function(result) {
               $scope.alerts['debug-container-error'] = {
                 type: "error",
-                message: "Could not debug container " + containerName,
+                message: "不能调试容器 " + containerName,
                 details: "Reason: " + $filter('getErrorDetails')(result)
               };
             });

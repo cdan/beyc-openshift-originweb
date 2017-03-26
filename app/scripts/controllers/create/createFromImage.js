@@ -291,7 +291,7 @@ angular.module("openshiftConsole")
                         function(failure) {
                           alerts.push({
                             type: "error",
-                            message: "Cannot create " + humanize(failure.object.kind).toLowerCase() + " \"" + failure.object.metadata.name + "\". ",
+                            message: "不能创建 " + humanize(failure.object.kind).toLowerCase() + " \"" + failure.object.metadata.name + "\". ",
                             details: failure.data.message
                           });
                         }
@@ -300,13 +300,13 @@ angular.module("openshiftConsole")
                         function(success) {
                           alerts.push({
                             type: "success",
-                            message: "Created " + humanize(success.kind).toLowerCase() + " \"" + success.metadata.name + "\" successfully. "
+                            message: "创建 " + humanize(success.kind).toLowerCase() + " \"" + success.metadata.name + "\" 成功. "
                           });
                         }
                       );
                     } else {
-                      alerts.push({ type: "success", message: "All resources for application " + $scope.name +
-                        " were created successfully."});
+                      alerts.push({ type: "success", message: "应用 " + $scope.name +
+                        " 所有资源已创建成功."});
                     }
                     d.resolve({alerts: alerts, hasErrors: hasErrors});
                   }
@@ -317,7 +317,7 @@ angular.module("openshiftConsole")
                 $scope.alerts["create"] =
                   {
                     type: "error",
-                    message: "An error occurred creating the application.",
+                    message: "创建应用过程出现错误.",
                     details: "Status: " + result.status + ". " + result.data
                   };
               }
@@ -337,7 +337,7 @@ angular.module("openshiftConsole")
               modalConfig: function() {
                 return {
                   alerts: alerts,
-                  message: "Problems were detected while checking your application configuration.",
+                  message: "应用配置信息出现问题.",
                   okButtonText: "Create Anyway",
                   okButtonClass: "btn-danger",
                   cancelButtonText: "Cancel"

@@ -78,7 +78,7 @@ angular.module("openshiftConsole")
 
         alerts['quotaExceeded'] = {
           type: 'warning',
-          message: 'Quota limit has been reached.',
+          message:'已经达到配额限制.',
           links: [{
             href: Navigate.quotaURL(),
             label: "View Quota"
@@ -118,7 +118,7 @@ angular.module("openshiftConsole")
       case 'Cancelled':
         alerts[mostRecentRC.metadata.uid + '-cancelled'] = {
           type: 'info',
-          message: 'Deployment ' + displayName + ' was cancelled.',
+          message:  '部署 ' + displayName + ' 已被取消.',
           // TODO: Add back start deployment link from previous overview (see serviceGroupNotifications.js)
           links: [{
             href: rcLink,
@@ -130,7 +130,7 @@ angular.module("openshiftConsole")
         logLink = URI(rcLink).addSearch({ tab: "logs" }).toString();
         alerts[mostRecentRC.metadata.uid + '-failed'] = {
           type: 'error',
-          message: 'Deployment ' + displayName + ' failed.',
+          message: '部署 ' + displayName + ' 失败.',
           reason: annotation(mostRecentRC, 'openshift.io/deployment.status-reason'),
           links: [{
             href: logLink,

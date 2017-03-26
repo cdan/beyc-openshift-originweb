@@ -247,7 +247,7 @@ function OverviewListRow($filter,
         var buildType = isJenkinsPipelineStrategy(buildConfig) ? 'pipeline' : 'build';
         row.state.alerts["start-build"] = {
           type: "error",
-          message: "An error occurred while starting the " + buildType + ".",
+          message: " " + buildType + "启动时出错.",
           details: getErrorDetails(result)
         };
       });
@@ -275,7 +275,7 @@ function OverviewListRow($filter,
       resolve: {
         modalConfig: function() {
           return {
-            message: "Cancel deployment " + rcName + "?",
+            message: "取消部署 " + rcName + "?",
             details: latestVersion ? ("This will attempt to stop the in-progress deployment and rollback to the previous deployment, #" + latestVersion + ". It may take some time to complete.") :
                                       "This will attempt to stop the in-progress deployment and may take some time to complete.",
             okButtonText: "Yes, cancel",
@@ -290,7 +290,7 @@ function OverviewListRow($filter,
       if (replicationController.metadata.uid !== row.current.metadata.uid) {
         row.state.alerts["cancel-deployment"] = {
           type: "error",
-          message: "Deployment #" + latestVersion + " is no longer the latest."
+          message: "部署 #" + latestVersion + " 不是最新的."
         };
         return;
       }
@@ -302,7 +302,7 @@ function OverviewListRow($filter,
       if (!deploymentIsInProgress(replicationController)) {
         row.state.alerts["cancel-deployment"] = {
           type: "error",
-          message: "Deployment " + rcName + " is no longer in progress."
+          message: "部署 " + rcName + " 没有进展."
         };
         return;
       }

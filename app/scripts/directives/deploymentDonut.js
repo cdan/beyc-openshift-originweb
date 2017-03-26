@@ -80,7 +80,7 @@ angular.module('openshiftConsole')
           $scope.alerts["scale"] =
             {
               type: "error",
-              message: "An error occurred scaling the deployment.",
+              message:"部署缩容出现问题.",
               details: $filter('getErrorDetails')(result)
             };
         };

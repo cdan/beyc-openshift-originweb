@@ -48,7 +48,7 @@ angular.module('openshiftConsole')
             .then(_.noop, function(result) {
               $scope.alerts["start-pipeline"] = {
                 type: "error",
-                message: "An error occurred while starting the pipeline.",
+                message: "编排开始时出错.",
                 details: $filter('getErrorDetails')(result)
               };
             });
@@ -77,7 +77,7 @@ angular.module('openshiftConsole')
             resumePending = false;
             $scope.alerts["resume-deployment"] = {
               type: "error",
-              message: "An error occurred resuming the deployment.",
+              message: "部署恢复时出错.",
               details: $filter('getErrorDetails')(e)
             };
           });
@@ -98,7 +98,7 @@ angular.module('openshiftConsole')
             resolve: {
               modalConfig: function() {
                 return {
-                  message: "Cancel deployment " + rcName + "?",
+                  message: "确定取消部署 " + rcName + "?",
                   details: latestVersion ? ("This will attempt to stop the in-progress deployment and rollback to the previous deployment, #" + latestVersion + ". It may take some time to complete.") :
                                             "This will attempt to stop the in-progress deployment and may take some time to complete.",
                   okButtonText: "Yes, cancel",
@@ -115,7 +115,7 @@ angular.module('openshiftConsole')
             if (!replicationController) {
               $scope.alerts["cancel-deployment"] = {
                 type: "error",
-                message: "Deployment " + rcName + " no longer exists."
+                message: "部署 " + rcName + " 已不存在."
               };
               return;
             }
@@ -124,7 +124,7 @@ angular.module('openshiftConsole')
             if (!deploymentIsInProgress(replicationController)) {
               $scope.alerts["cancel-deployment"] = {
                 type: "error",
-                message: "Deployment " + rcName + " is no longer in progress."
+                message: "部署 " + rcName + " 没有进展."
               };
               return;
             }

@@ -329,7 +329,7 @@ angular.module('openshiftConsole')
           var alertID = 'metrics-failed-' + scope.uniqueID;
           scope.alerts[alertID] = {
             type: 'error',
-            message: 'An error occurred updating metrics for pod ' + _.get(scope, 'pod.metadata.name', '<unknown>') + '.',
+            message:  'pod ' + _.get(scope, 'pod.metadata.name', '<unknown>') + '权值更新时出错.',
             links: [{
               href: '',
               label: 'Retry',

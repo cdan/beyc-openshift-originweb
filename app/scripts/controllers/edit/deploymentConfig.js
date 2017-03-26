@@ -191,13 +191,13 @@ angular.module('openshiftConsole')
               if (action === 'MODIFIED') {
                 $scope.alerts["updated/deleted"] = {
                   type: "warning",
-                  message: "This deployment configuration has changed since you started editing it. You'll need to copy any changes you've made and edit again."
+                  message:"自从你编辑时部署配置信息已被更改，你需要复制你更改的内容并且再次编辑它."
                 };
               }
               if (action === "DELETED") {
                 $scope.alerts["updated/deleted"] = {
                   type: "warning",
-                  message: "This deployment configuration has been deleted."
+                  message: "部署配置已经被删除."
                 };
                 $scope.disableInputs = true;
               }
@@ -210,7 +210,7 @@ angular.module('openshiftConsole')
             $scope.loaded = true;
             $scope.alerts["load"] = {
               type: "error",
-              message: "The deployment configuration details could not be loaded.",
+              message: "部署配置详细信息不能被加载.",
               details: $filter('getErrorDetails')(e)
             };
           }
@@ -235,7 +235,7 @@ angular.module('openshiftConsole')
           modalConfig: function() {
             return {
               alerts: $scope.alerts,
-              message: "Some of your existing " + $scope.originalStrategy.toLowerCase() + " strategy parameters can be used for the " + $scope.strategyData.type.toLowerCase() + " strategy. Keep parameters?",
+              message: "你的一些现有的 " + $scope.originalStrategy.toLowerCase() + " 策略参数可用于 " + $scope.strategyData.type.toLowerCase() + " 策略。确定保存参数?",
               details: "The timeout parameter and any pre or post lifecycle hooks will be copied from " + $scope.originalStrategy.toLowerCase() + " strategy to " + $scope.strategyData.type.toLowerCase() + " strategy. After saving the changes, " + $scope.originalStrategy.toLowerCase() + " strategy parameters will be removed.",
               okButtonText: "Yes",
               okButtonClass: "btn-primary",
@@ -355,7 +355,7 @@ angular.module('openshiftConsole')
             name: $scope.updatedDeploymentConfig.metadata.name,
             data: {
               type: "success",
-              message: "Deployment config " + $scope.updatedDeploymentConfig.metadata.name + " was successfully updated."
+              message:  "部属配置 " + $scope.updatedDeploymentConfig.metadata.name + " 更新成功."
             }
           });
           var returnURL = Navigate.resourceURL($scope.updatedDeploymentConfig);
@@ -365,7 +365,7 @@ angular.module('openshiftConsole')
           $scope.disableInputs = false;
           $scope.alerts["save"] = {
             type: "error",
-            message: "An error occurred updating deployment config " + $scope.updatedDeploymentConfig.metadata.name + ".",
+            message: "更新部属配置 " + $scope.updatedDeploymentConfig.metadata.name + "出错.",
             details: $filter('getErrorDetails')(result)
           };
         }

@@ -81,14 +81,14 @@ angular.module('openshiftConsole')
           $scope.alerts['saveBCEnvVarsSuccess'] = {
             type: "success",
             // TODO:  improve success alert
-            message: $scope.buildConfigName + " was updated."
+            message: $scope.buildConfigName + " 被更新."
           };
           $scope.forms.bcEnvVars.$setPristine();
         }, function error(e){
           $scope.alerts['saveBCEnvVarsError'] = {
             type: "error",
-            message: $scope.buildConfigName + " was not updated.",
-            details: "Reason: " + $filter('getErrorDetails')(e)
+            message: $scope.buildConfigName + " 不能更新.",
+            details: "原因: " + $filter('getErrorDetails')(e)
           };
         });
     };
@@ -132,7 +132,7 @@ angular.module('openshiftConsole')
       if (action === "DELETED") {
         $scope.alerts["deleted"] = {
           type: "warning",
-          message: "This build configuration has been deleted."
+          message: "构建的配置信息已被删除."
         };
         $scope.buildConfigDeleted = true;
       }
@@ -141,7 +141,7 @@ angular.module('openshiftConsole')
       } else {
         $scope.alerts["background_update"] = {
           type: "warning",
-          message: "This build configuration has been updated in the background. Saving your changes may create a conflict or cause loss of data.",
+          message: "构建的配置已经被更新在界面中。保存你的修改可能会有冲突或者数据的丢失.",
           links: [
             {
               label: 'Reload Environment Variables',
@@ -174,8 +174,8 @@ angular.module('openshiftConsole')
             $scope.loaded = true;
             $scope.alerts["load"] = {
               type: "error",
-              message: e.status === 404 ? "This build configuration can not be found, it may have been deleted." : "The build configuration details could not be loaded.",
-              details: e.status === 404 ? "Any remaining build history for this build will be shown." : "Reason: " + $filter('getErrorDetails')(e)
+              message: e.status === 404 ? "构建的配置信息无法找到, 可能已被删除." : "构建的配置详细信息不能被加载.",
+              details: e.status === 404 ? "剩余的构建历史记录都将被显示." : "原因: " + $filter('getErrorDetails')(e)
             };
           }
         );
@@ -250,13 +250,13 @@ angular.module('openshiftConsole')
               // TODO: common alerts service to eliminate duplication
               $scope.alerts["create"] = {
                 type: "success",
-                message: "Build " + build.metadata.name + " has started."
+                message: "构建 " + build.metadata.name + " 已经开始."
               };
             }, function reject(result) {
               // TODO: common alerts service to eliminate duplication
               $scope.alerts["create"] = {
                 type: "error",
-                message: "An error occurred while starting the build.",
+                message: "构建起始出现错误.",
                 details: $filter('getErrorDetails')(result)
               };
             });

@@ -108,7 +108,7 @@ angular.module('openshiftConsole')
       previousEnvConflict = true;
       $scope.alerts["env-conflict"] = {
         type: "warning",
-        message: "The environment variables for the " +
+        message: "这个环境变量属于" +
           $filter('humanizeKind')($scope.replicaSet.kind) +
             " have been updated in the background. Saving your changes may create a conflict or cause loss of data.",
         links: [
@@ -134,13 +134,13 @@ angular.module('openshiftConsole')
         $scope.alerts['saveEnvSuccess'] = {
           type: "success",
           // TODO:  improve success alert
-          message: $scope.replicaSet.metadata.name + " was updated."
+          message:  $scope.replicaSet.metadata.name + " 已经被更新."
         };
         $scope.forms.envForm.$setPristine();
       }, function failure(e) {
         $scope.alerts['saveEnvError'] = {
           type: "error",
-          message: $scope.replicaSet.metadata.name + " was not updated.",
+          message: $scope.replicaSet.metadata.name + " 没有更新.",
           details: "Reason: " + $filter('getErrorDetails')(e)
         };
       });
@@ -285,7 +285,7 @@ angular.module('openshiftConsole')
 
               $scope.alerts["load"] = {
                 type: "error",
-                message: "The deployment configuration details could not be loaded.",
+                message: "部署配置详情不能被加载.",
                 details: "Reason: " + $filter('getErrorDetails')(e)
               };
             }
@@ -330,7 +330,7 @@ angular.module('openshiftConsole')
               if (action === "DELETED") {
                 $scope.alerts['deployment-deleted'] = {
                   type: "warning",
-                  message: "The deployment controlling this replica set has been deleted."
+                  message: "部属配置副本已经被删除."
                 };
                 $scope.healthCheckURL = Navigate.healthCheckURL($routeParams.project,
                                                                 "ReplicaSet",
@@ -428,7 +428,7 @@ angular.module('openshiftConsole')
               if (action === "DELETED") {
                 $scope.alerts["deleted"] = {
                   type: "warning",
-                  message: "This " + displayKind + " has been deleted."
+                  message: "这个 " + displayKind + " 已经被删除."
                 };
               }
 
@@ -467,7 +467,7 @@ angular.module('openshiftConsole')
             $scope.loaded = true;
             $scope.alerts["load"] = {
               type: "error",
-              message: "The " + displayKind + " details could not be loaded.",
+              message: "这个 " + displayKind + " 详情不能被加载.",
               details: "Reason: " + $filter('getErrorDetails')(e)
             };
             $scope.breadcrumbs = BreadcrumbsService.getBreadcrumbs({
@@ -573,7 +573,7 @@ angular.module('openshiftConsole')
             $scope.alerts = $scope.alerts || {};
             $scope.alerts["scale"] = {
               type: "error",
-              message: "An error occurred scaling.",
+              message: "缩容出现错误.",
               details: $filter('getErrorDetails')(result)
             };
           };
@@ -605,17 +605,17 @@ angular.module('openshiftConsole')
         };
 
         $scope.removeVolume = function(volume) {
-          var details = "This will remove the volume from the " + $filter('humanizeKind')($scope.replicaSet.kind) + ".";
+          var details = "这将从 " + $filter('humanizeKind')($scope.replicaSet.kind) + "中删除卷标.";
           if (volume.persistentVolumeClaim) {
-            details += " It will not delete the persistent volume claim.";
+            details += "这将不能删除持久的卷标声明.";
           } else if (volume.secret) {
-            details += " It will not delete the secret.";
+            details += " 将不能删除机密";
           } else if (volume.configMap) {
-            details += " It will not delete the config map.";
+            details += " 将不能删除配置图.";
           }
 
           var confirm = ModalsService.confirm({
-            message: "Remove volume " + volume.name + "?",
+            message: "确定删除卷 " + volume.name + "?",
             details: details,
             okButtonText: "Remove",
             okButtonClass: "btn-danger",
@@ -625,7 +625,7 @@ angular.module('openshiftConsole')
           var showError = function(e) {
             $scope.alerts["remove-volume-error"] = {
               type: "error",
-              message: "An error occurred removing the volume.",
+              message: "删除卷出现错误.",
               details: $filter('getErrorDetails')(e)
             };
           };

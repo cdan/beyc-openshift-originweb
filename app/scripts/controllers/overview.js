@@ -478,7 +478,7 @@ angular.module('openshiftConsole')
         }
         $scope.alerts['quotaExceeded'] = {
           type: 'warning',
-          message: 'Quota limit has been reached.',
+          message: '已经达到配额限制.',
           links: [{
             href: "project/" + $scope.projectName + "/quota",
             label: "View Quota"
@@ -578,7 +578,7 @@ angular.module('openshiftConsole')
 
         $scope.alerts['metrics-connection-failed'] = {
           type: 'warning',
-          message: 'An error occurred getting metrics.',
+          message:  '获取权值出现错误.',
           links: [{
             href: data.url,
             label: 'Open Metrics URL',

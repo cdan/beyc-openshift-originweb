@@ -390,11 +390,11 @@ angular.module('openshiftConsole')
 
       if (pod.status.phase === 'Unknown') {
         // We always show Unknown pods in a warning state
-        warnings.push({reason: 'Unknown', pod: pod.metadata.name, message: 'The state of the pod could not be obtained. This is typically due to an error communicating with the host of the pod.'});
+        warnings.push({reason: 'Unknown', pod: pod.metadata.name, message: 'pod状态无法获得，这通常是由于pod与主机之间通信出错.'});
       }
 
       if (isPodStuckFilter(pod)) {
-        warnings.push({reason: "Stuck", pod: pod.metadata.name, message: "The pod has been stuck in the pending state for more than five minutes."});
+        warnings.push({reason: "Stuck", pod: pod.metadata.name, message: "pod一直停留在挂起状态超过五分钟."});
       }
 
       if (pod.status.phase === 'Running' && pod.status.containerStatuses) {
@@ -410,7 +410,7 @@ angular.module('openshiftConsole')
                 reason: "NonZeroExitTerminatingPod",
                 pod: pod.metadata.name,
                 container: containerStatus.name,
-                message: "The container " + containerStatus.name + " did not stop cleanly when terminated (exit code " + containerStatus.state.terminated.exitCode + ")."
+                message: "容器 " + containerStatus.name + " 终止(exit code " + containerStatus.state.terminated.exitCode + ")时没有停止清理."
               });
             } else {
               warnings.push({
@@ -418,7 +418,7 @@ angular.module('openshiftConsole')
                 reason: "NonZeroExit",
                 pod: pod.metadata.name,
                 container: containerStatus.name,
-                message: "The container " + containerStatus.name + " failed (exit code " + containerStatus.state.terminated.exitCode + ")."
+                message: "容器 " + containerStatus.name + " 失败 (exit code " + containerStatus.state.terminated.exitCode + ")."
               });
             }
           }
@@ -428,7 +428,7 @@ angular.module('openshiftConsole')
               reason: "Looping",
               pod: pod.metadata.name,
               container: containerStatus.name,
-              message: "The container " + containerStatus.name + " is crashing frequently. It must wait before it will be restarted again."
+              message: "容器" + containerStatus.name + " 频繁挂起. 必须等待下次重新启动."
             });
           }
           if (isContainerUnpreparedFilter(containerStatus)) {
@@ -437,7 +437,7 @@ angular.module('openshiftConsole')
               reason: "Unprepared",
               pod: pod.metadata.name,
               container: containerStatus.name,
-              message: "The container " + containerStatus.name + " has been running for more than five minutes and has not passed its readiness check."
+              message: "容器 " + containerStatus.name + " 已启动五分钟，并且未通过检查."
             });
           }
         });

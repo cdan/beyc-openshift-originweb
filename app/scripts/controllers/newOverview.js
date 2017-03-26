@@ -370,7 +370,7 @@ function OverviewController($scope,
 
       state.alerts['metrics-connection-failed'] = {
         type: 'warning',
-        message: 'An error occurred getting metrics.',
+        message:  '获取权值出现错误.',
         links: [{
           href: data.url,
           label: 'Open Metrics URL',
@@ -1055,7 +1055,7 @@ function OverviewController($scope,
         var buildType = isJenkinsPipelineStrategy(buildConfig) ? 'pipeline' : 'build';
         state.alerts["start-build"] = {
           type: "error",
-          message: "An error occurred while starting the " + buildType + ".",
+          message:  " " + buildType + "启动时出错.",
           details: getErrorDetails(result)
         };
       });

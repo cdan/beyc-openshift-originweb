@@ -176,7 +176,7 @@ angular.module('openshiftConsole')
 
           $scope.alerts["deployments"] = {
             type: "warning",
-            details: "The active filters are hiding all deployments."
+            details: "启用过滤器将隐藏所有部署"
           };
         }
 

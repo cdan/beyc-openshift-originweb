@@ -46,7 +46,7 @@ angular.module('openshiftConsole')
       if (action === "DELETED") {
         $scope.alerts["deleted"] = {
           type: "warning",
-          message: "This route has been deleted."
+          message: "路由已经被删除."
         };
       }
     };
@@ -97,7 +97,7 @@ angular.module('openshiftConsole')
             $scope.loaded = true;
             $scope.alerts["load"] = {
               type: "error",
-              message: "The route details could not be loaded.",
+              message: "路由详情不能被加载.",
               details: "Reason: " + $filter('getErrorDetails')(e)
             };
           });

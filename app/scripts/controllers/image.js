@@ -53,7 +53,7 @@ angular.module('openshiftConsole')
           $scope.loaded = true;
           $scope.alerts["load"] = {
             type: "error",
-            message: "The image details could not be loaded.",
+            message: "镜像详情不能被加载.",
             details: "Reason: " + $filter('getErrorDetails')(e)
           };
         }
@@ -71,7 +71,7 @@ angular.module('openshiftConsole')
       if (!tagData) {
         $scope.alerts["load"] = {
           type: "error",
-          message: "The image tag was not found in the stream.",
+          message: "镜像流中没有找到镜像标签.",
         };
         return;
       }
@@ -85,7 +85,7 @@ angular.module('openshiftConsole')
       if (action === "DELETED") {
         $scope.alerts["deleted"] = {
           type: "warning",
-          message: "This image stream has been deleted."
+          message: "镜像流已经被删除."
         };
       }
     };
@@ -105,7 +105,7 @@ angular.module('openshiftConsole')
             $scope.loaded = true;
             $scope.alerts["load"] = {
               type: "error",
-              message: "The image stream details could not be loaded.",
+              message: "镜像流详情不能被加载.",
               details: "Reason: " + $filter('getErrorDetails')(e)
             };
           });

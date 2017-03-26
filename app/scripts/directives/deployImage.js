@@ -226,7 +226,7 @@ angular.module("openshiftConsole")
                   alerts = _.map(result.failure, function(failure) {
                     return {
                       type: "error",
-                      message: "Cannot create " + humanizeKind(failure.object.kind).toLowerCase() + " \"" + failure.object.metadata.name + "\". ",
+                      message: "不能创建 " + humanizeKind(failure.object.kind).toLowerCase() + " \"" + failure.object.metadata.name + "\". ",
                       details: failure.data.message
                     };
                   });
@@ -234,14 +234,14 @@ angular.module("openshiftConsole")
                   alerts = alerts.concat(_.map(result.success, function(success) {
                     return {
                       type: "success",
-                      message: "Created " + humanizeKind(success.kind).toLowerCase() + " \"" + success.metadata.name + "\" successfully. "
+                      message: "创建 " + humanizeKind(success.kind).toLowerCase() + " \"" +所有资源已被创建 + "\" 成功. "
                     };
                   }));
                 } else {
                   // Only show one success message when everything worked.
                   alerts = [{
                     type: "success",
-                    message: "All resources for image " + $scope.app.name + " were created successfully."
+                    message:"镜像 " + $scope.app.name + " 已创建成功."
                   }];
                 }
                 d.resolve({alerts: alerts, hasErrors: hasErrors});
@@ -261,7 +261,7 @@ angular.module("openshiftConsole")
                 modalConfig: function() {
                   return {
                     alerts: alerts,
-                    message: "Problems were detected while checking your application configuration.",
+                    message: "检测到你的应用配置出现问题.",
                     okButtonText: "Create Anyway",
                     okButtonClass: "btn-danger",
                     cancelButtonText: "Cancel"

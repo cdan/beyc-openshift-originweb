@@ -107,7 +107,7 @@ angular.module('openshiftConsole')
                 $scope.disableInputs = false;
                 $scope.alerts['create-route'] = {
                   type: "error",
-                  message: "An error occurred creating the route.",
+                  message: "创建路由时出现错误.",
                   details: $filter('getErrorDetails')(result)
                 };
               });

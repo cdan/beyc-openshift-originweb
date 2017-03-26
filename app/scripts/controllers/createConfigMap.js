@@ -68,7 +68,7 @@ angular.module('openshiftConsole')
                 $scope.disableInputs = false;
                 $scope.alerts['create-config-map'] = {
                   type: "error",
-                  message: "An error occurred creating the config map.",
+                  message: "创建配置图时出现错误.",
                   details: $filter('getErrorDetails')(result)
                 };
               });
