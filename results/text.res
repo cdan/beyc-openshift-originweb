@@ -974,13 +974,13 @@
 45:      <textarea
 59:          ng-attr-aria-describedby="{{parameter.description ? (paramID + '-description') : undefined}}"></textarea>
 ============= ./views/_volumes.html =================
-18:        <span class="small text-muted">(populated by a secret when the pod is created)</span>
-38:        <span class="small text-muted">(reference to a persistent volume claim)</span>
-52:        <span class="small text-muted">(bare host directory volume)</span>
-61:       <span class="small text-muted">(temporary directory destroyed with the pod)</span>
-73:       <span class="small text-muted">(pulled from git when the pod is created)</span>
-84:        <span class="small text-muted">(populated with information about the pod)</span>
-95:        <span class="small text-muted">(populated by a config map)</span>
+18:        <span class="small text-muted">(当pod建立时被一个机密构成)</span>
+38:        <span class="small text-muted">(参考一个固定卷声明)</span>
+52:        <span class="small text-muted">(显示主机文件夹卷)</span>
+61:       <span class="small text-muted">(临时文件夹和pod同时销毁)</span>
+73:       <span class="small text-muted">(当pod创建的时候从git拉取)</span>
+84:        <span class="small text-muted">(生成关于pod的信息)</span>
+95:        <span class="small text-muted">(生成一个配置映射关系图)</span>
 ============= ./views/add-config-volume.html =================
 19:                <div ng-if="error" class="empty-state-message text-center">
 26:                    <h2 class="text-center">No config maps or secrets.</h2>

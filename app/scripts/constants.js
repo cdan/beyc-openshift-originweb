@@ -134,18 +134,18 @@ angular.extend(window.OPENSHIFT_CONSTANTS, {
   // href's will be prefixed with /project/{{projectName}} unless they are absolute URLs
   PROJECT_NAVIGATION: [
     {
-      label: "Overview",
+      label: "纵览",
       iconClass: "fa fa-dashboard",
       href: "/overview"
     },
     {
-      label: "Applications",
+      label: "应用",
       iconClass: "fa fa-cubes",
       secondaryNavSections: [
         {
           items: [
             {
-              label: "Deployments",
+              label: "部署",
               href: "/browse/deployments",
               prefixes: [
                 "/browse/deployment/",
@@ -155,7 +155,7 @@ angular.extend(window.OPENSHIFT_CONSTANTS, {
               ]
             },
             {
-              label: "Stateful Sets",
+              label: "状态",
               href: "/browse/stateful-sets",
               prefixes: [
                 "/browse/stateful-sets/"
@@ -169,14 +169,14 @@ angular.extend(window.OPENSHIFT_CONSTANTS, {
               ]
             },
             {
-              label: "Services",
+              label: "服务",
               href: "/browse/services",
               prefixes: [
                 "/browse/services/"
               ]
             },
             {
-              label: "Routes",
+              label: "路由",
               href: "/browse/routes",
               prefixes: [
                 "/browse/routes/"
@@ -187,13 +187,13 @@ angular.extend(window.OPENSHIFT_CONSTANTS, {
       ]
     },
     {
-      label: "Builds",
+      label: "构建",
       iconClass: "pficon pficon-build",
       secondaryNavSections: [
         {
           items: [
             {
-              label: "Builds",
+              label: "构建",
               href: "/browse/builds",
               prefixes: [
                 "/browse/builds/",
@@ -201,14 +201,14 @@ angular.extend(window.OPENSHIFT_CONSTANTS, {
               ]
             },
             {
-              label: "Pipelines",
+              label: "编排",
               href: "/browse/pipelines",
               prefixes: [
                 "/browse/pipelines/"
               ]
             },
             {
-              label: "Images",
+              label: "镜像",
               href: "/browse/images",
               prefixes: [
                 "/browse/images/"
@@ -219,17 +219,17 @@ angular.extend(window.OPENSHIFT_CONSTANTS, {
       ]
     },
     {
-      label: "Resources",
+      label: "资源",
       iconClass: "fa fa-files-o",
       secondaryNavSections: [
         {
           items: [
             {
-              label: "Quota",
+              label: "配额",
               href: "/quota"
             },
             {
-              label: "Membership",
+              label: "权限",
               href: "/membership",
               // supports: {resource: '', verb: '', group: '' }
               canI: {
@@ -238,14 +238,14 @@ angular.extend(window.OPENSHIFT_CONSTANTS, {
               }
             },
             {
-              label: "Config Maps",
+              label: "配置图",
               href: "/browse/config-maps",
               prefixes: [
                 "/browse/config-maps/"
               ]
             },
             {
-              label: "Secrets",
+              label: "机密",
               href: "/browse/secrets",
               prefixes: [
                 "/browse/secrets/"
@@ -256,7 +256,7 @@ angular.extend(window.OPENSHIFT_CONSTANTS, {
               }
             },
             {
-              label: "Other Resources",
+              label: "其他资源",
               href: "/browse/other"
             }
           ]
@@ -264,7 +264,7 @@ angular.extend(window.OPENSHIFT_CONSTANTS, {
       ]
     },
     {
-      label: "Storage",
+      label: "存储",
       iconClass: "pficon pficon-container-node",
       href: "/browse/storage",
       prefixes: [
@@ -272,7 +272,7 @@ angular.extend(window.OPENSHIFT_CONSTANTS, {
       ]
     },
     {
-      label: "Monitoring",
+      label: "监控",
       iconClass: "pficon pficon-screen",
       href: "/monitoring",
       prefixes: [
@@ -302,7 +302,7 @@ angular.extend(window.OPENSHIFT_CONSTANTS, {
   CATALOG_CATEGORIES: [
     {
       id: 'languages',
-      label: "Languages",
+      label: "语言",
       iconClassDefault: "fa fa-code",
       items: [
         {
@@ -392,45 +392,45 @@ angular.extend(window.OPENSHIFT_CONSTANTS, {
     },
     {
       id: 'technologies',
-      label: "Technologies",
+      label: "业务",
       items: [
         {
           id: "business-process-services",
           categoryAliases: ["decisionserver","processserver"],
-          label: "Business Process Services",
-          description: "Model, automate, and orchestrate business processes across applications, services, and data."
+          label: "业务流程服务",
+          description: "跨应用，服务和数据库进行建模，自动化和编排业务流程."
         },
         {
           id: "ci-cd",
           categoryAliases:["jenkins"],
-          label: "Continuous Integration & Deployment",
-          description: "Automate the build, test, and deployment of your application with each new code revision."
+          label: "持续集成和部署",
+          description: "对每个新的应用版本进行自动化的构建、测试和部署."
         },
         {
           id: "datastore",
           categoryAliases: ["database","datagrid"],
-          label: "Data Stores",
-          description: "Store and manage collections of data."
+          label: "数据存储",
+          description: "存储管理数据集合"
         },
         {
           id: "messaging",
-          label: "Messaging",
-          description: "Facilitate communication between applications and distributed processes with a messaging server."
+          label: "消息",
+          description: "通过消息服务器促进应用和分布式业务之间通信."
         },
         {
           id: "integration",
-          label: "Integration",
-          description: "Connect with other applications and data to enhance functionality without duplication."
+          label: "集成",
+          description: "无需重复，和其他应用与数据之间的联系来加强功能性."
         },
         {
           id: "single-sign-on",
           categoryAliases: ["sso"],
-          label: "Single Sign-On",
-          description: "A centralized authentication server for users to log in, log out, register, and manage user accounts for applications and RESTful web services."
+          label: "单点登录",
+          description: "通过一个集中的身份验证服务器对应用及EWSTful服务的用户进行登录、注销、注册和账户信息的管理."
         },
         {
           id: "",
-          label: "Uncategorized",
+          label: "未分类",
           description: ""
         }
       ]
