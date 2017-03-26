@@ -234,7 +234,7 @@ angular.module("openshiftConsole")
                   alerts = alerts.concat(_.map(result.success, function(success) {
                     return {
                       type: "success",
-                      message: "创建 " + humanizeKind(success.kind).toLowerCase() + " \"" +所有资源已被创建 + "\" 成功. "
+                      message: "创建 " + humanizeKind(success.kind).toLowerCase() + " \"" +success.metadata.name + "\" 成功. "
                     };
                   }));
                 } else {
