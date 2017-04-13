@@ -1,0 +1,3 @@
+============= ./views/edit/build-config.html =================
+539:                        <div class="help-block" ng-switch-when="SerialLatestOnly">Builds triggered from this Build Configuration will run one at the time. When a currently running build completes, the next build that will run is the latest build created. Other queued builds will be cancelled.</div>
+

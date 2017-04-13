@@ -1,0 +1,93 @@
+============= ./404.html =================
+144:      <h1>Not found <span>:(</span></h1>
+============= ./index.html =================
+66:                <h1>JavaScript Required</h1>
+============= ./views/about.html =================
+20:                      <h1>Red Hat OpenShift <span class="about-reg">&reg;</span></h1>
+============= ./views/add-config-volume.html =================
+37:                    <h1>Add Config Files</h1>
+============= ./views/attach-pvc.html =================
+40:                  <h1>Add Storage</h1>
+============= ./views/browse/config-maps.html =================
+13:            <h1>
+============= ./views/browse/routes.html =================
+13:            <h1>
+============= ./views/browse/stateful-sets.html =================
+13:            <h1>
+============= ./views/browse/image.html =================
+13:            <h1>
+============= ./views/browse/stateful-set.html =================
+16:            <h1>
+============= ./views/builds.html =================
+10:            <h1>
+============= ./views/create-config-map.html =================
+17:                  <h1>Create Config Map</h1>
+============= ./views/create-persistent-volume-claim.html =================
+17:                  <h1>Create Storage</h1>
+============= ./views/create-project.html =================
+13:              <h1>New Project</h1>
+============= ./views/create-route.html =================
+17:                  <h1>Create Route</h1>
+============= ./views/create-secret.html =================
+19:                    <h1>Create Secret</h1>
+============= ./views/create/category.html =================
+15:                <h1>{{category.label}}</h1>
+============= ./views/deployments.html =================
+10:            <h1>
+============= ./views/directives/osc-image-summary.html =================
+1:<h1>{{ name || (resource | displayName) }}</h1>
+============= ./views/edit/autoscaler.html =================
+20:                  <h1>
+============= ./views/edit/build-config.html =================
+15:            <h1>
+============= ./views/edit/config-map.html =================
+17:                  <h1>Edit Config Map {{configMap.metadata.name}}</h1>
+============= ./views/edit/deployment-config.html =================
+16:              <h1>
+============= ./views/edit/health-checks.html =================
+18:                  <h1>Health Checks: {{name}}</h1>
+============= ./views/edit/route.html =================
+15:              <h1>Edit Route {{routeName}}</h1>
+============= ./views/events.html =================
+10:            <h1>Events</h1>
+============= ./views/images.html =================
+10:            <h1>
+============= ./views/modals/confirm-replace.html =================
+4:      <h1>{{resourceKind}} '<strong>{{resourceName}}</strong>' already exists</h1>
+9:      <h1>Some items already exist:</h1>
+============= ./views/modals/confirm-save-log.html =================
+3:    <h1>Save partial log for <strong>{{object.metadata.name}}</strong>?</h1>
+============= ./views/modals/confirm.html =================
+3:    <h1>{{message}}</h1>
+============= ./views/modals/confirmScale.html =================
+3:    <h1>Scale down {{type}} <strong>{{resource | displayName}}</strong>?</h1>
+============= ./views/modals/process-template.html =================
+3:    <h1>{{updateTemplate ? "Update" : "Add"}} Template</h1>
+============= ./views/monitoring.html =================
+11:              <h1>
+============= ./views/other-resources.html =================
+10:            <h1>Other Resources</h1>
+============= ./views/pipelines.html =================
+10:          <h1>
+============= ./views/pods.html =================
+10:            <h1>
+============= ./views/quota.html =================
+12:                <h1>
+204:                  <h1>Limit Range</h1>
+============= ./views/secrets.html =================
+13:            <h1>
+============= ./views/services.html =================
+10:            <h1>
+============= ./views/set-limits.html =================
+18:                  <h1>Resource Limits: {{name}}</h1>
+============= ./views/storage.html =================
+10:            <h1>
+============= ./views/util/error.html =================
+9:        <h1>Error</h1>
+============= ./views/util/logout.html =================
+6:        <h1>Log out</h1>
+============= ./views/membership.html =================
+9:            <h1>
+============= ./views/projects.html =================
+25:                        <h1>Projects</h1>
+130:                    <h1>Welcome to OpenShift.</h1>
