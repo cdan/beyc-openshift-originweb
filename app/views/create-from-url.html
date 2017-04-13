@@ -39,7 +39,7 @@
                     <div ng-if="!noProjects && canCreateProject">
                       <uib-tabset>
                         <uib-tab>
-                          <uib-tab-heading>Choose Existing Project</uib-tab-heading>
+                          <uib-tab-heading>选择已存在项目</uib-tab-heading>
                           <ui-select ng-model="selected.project">
                             <ui-select-match placeholder="Project name">
                               {{$select.selected | displayName}}
@@ -63,7 +63,7 @@
                           </div>
                         </uib-tab>
                         <uib-tab>
-                          <uib-tab-heading>Create a New Project</uib-tab-heading>
+                          <uib-tab-heading>创建新项目</uib-tab-heading>
                           <create-project alerts="alerts" redirect-action="createWithProject"></create-project>
                         </uib-tab>
                       </uib-tabset>

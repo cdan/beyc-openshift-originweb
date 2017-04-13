@@ -105,13 +105,13 @@
                 </div>
                 <uib-tabset>
                   <uib-tab active="selectedTab.history">
-                    <uib-tab-heading>History</uib-tab-heading>
+                    <uib-tab-heading>历史</uib-tab-heading>
                     <div ng-if="mostRecent" class="deployment-config-summary">
                       <!-- Show the latest deployment status first. -->
                       <div class="h3">
                         <span class="latest-status">
                           <status-icon status="mostRecent | deploymentStatus"></status-icon>
-                          Deployment
+                          部署
                           <!-- Line break comments to prevent whitespace from being underlined on link hover. -->
                           <a ng-href="{{mostRecent | navigateResourceURL}}"><!--
                             --><span ng-if="mostRecent | annotation : 'deploymentVersion'">#{{mostRecent | annotation : 'deploymentVersion'}}</span><!--
@@ -185,7 +185,7 @@
                     </table>
                   </uib-tab>
                   <uib-tab active="selectedTab.configuration">
-                    <uib-tab-heading>Configuration</uib-tab-heading>
+                    <uib-tab-heading>配置</uib-tab-heading>
                     <div class="resource-details" ng-if="deploymentConfig">
                       <div class="row">
                         <div class="col-lg-6">
@@ -335,7 +335,7 @@
                     </div>
                   </uib-tab>
                   <uib-tab heading="Environment" active="selectedTab.environment" ng-if="deploymentConfig">
-                    <uib-tab-heading>Environment</uib-tab-heading>
+                    <uib-tab-heading>环境</uib-tab-heading>
                     <ng-form name="forms.dcEnvVars" class="mar-bottom-xl block">
                       <div ng-repeat="container in updatedDeploymentConfig.spec.template.spec.containers">
                         <h3>Container {{container.name}} Environment Variables</h3>
@@ -376,7 +376,7 @@
                     </ng-form>
                   </uib-tab>
                   <uib-tab active="selectedTab.events" ng-if="'events' | canI : 'watch'">
-                    <uib-tab-heading>Events</uib-tab-heading>
+                    <uib-tab-heading>日志</uib-tab-heading>
                     <events resource-kind="DeploymentConfig" resource-name="{{deploymentConfig.metadata.name}}" project-context="projectContext" ng-if="selectedTab.events"></events>
                   </uib-tab>
                 </uib-tabset>

@@ -75,7 +75,7 @@
                       ng-if="buildConfigPaused || buildConfigDeleted"
                       aria-hidden="true"
                       data-toggle="tooltip"
-                      data-original-title="{{buildConfigDeleted ? 'The build configuration for this build no longer exists.' : 'Building from build configuration ' + buildConfig.metadata.name + ' has been paused.'}}">
+                      data-original-title="{{buildConfigDeleted ? '彻底删除.' : '暂停基于配置' + buildConfig.metadata.name + '的构建过程.'}}">
                 </span>
                 <small class="meta">created <span am-time-ago="build.metadata.creationTimestamp"></span></small>
               </h1>
@@ -91,14 +91,14 @@
 
                   <uib-tabset>
                     <uib-tab active="selectedTab.details">
-                      <uib-tab-heading>Details</uib-tab-heading>
+                      <uib-tab-heading>详情</uib-tab-heading>
                       <build-pipeline build="build" ng-if="build | isJenkinsPipelineStrategy"></build-pipeline>
                       <ng-include src=" 'views/browse/_build-details.html' "></ng-include>
                     </uib-tab>
 
                     <uib-tab heading="Environment" active="selectedTab.environment" ng-if="!(build | isJenkinsPipelineStrategy)">
-                      <uib-tab-heading>Environment</uib-tab-heading>
-                      <h3>Environment Variables</h3>
+                      <uib-tab-heading>环境</uib-tab-heading>
+                      <h3>环境变量</h3>
                       <p ng-if="'buildconfigs' | canI : 'update'">
                         <span class="pficon pficon-info" aria-hidden="true"></span>
                         Environment variables can be edited on the <a ng-href="{{build | configURLForResource}}?tab=environment">build configuration</a>.
@@ -117,7 +117,7 @@
                     </uib-tab>
 
                     <uib-tab active="selectedTab.logs" ng-if="!(build | isJenkinsPipelineStrategy) && ('builds/log' | canI : 'get')">
-                      <uib-tab-heading>Logs</uib-tab-heading>
+                      <uib-tab-heading>日志</uib-tab-heading>
                       <log-viewer
                         ng-if="selectedTab.logs"
                         follow-affix-top="390"
@@ -141,7 +141,7 @@
                       </log-viewer>
                     </uib-tab>
                     <uib-tab active="selectedTab.events" ng-if="('events' | canI : 'watch')">
-                      <uib-tab-heading>Events</uib-tab-heading>
+                      <uib-tab-heading>事件</uib-tab-heading>
                       <events resource-kind="Pod" resource-name="{{build | annotation : 'buildPod'}}" project-context="projectContext" ng-if="selectedTab.events"></events>
                     </uib-tab>
                   </uib-tabset>

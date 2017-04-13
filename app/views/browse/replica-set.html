@@ -42,13 +42,13 @@
               <div class="col-md-12">
                 <uib-tabset>
                   <uib-tab active="selectedTab.details">
-                    <uib-tab-heading>Details</uib-tab-heading>
+                    <uib-tab-heading>详情</uib-tab-heading>
                     <div class="resource-details">
                       <ng-include src=" 'views/browse/_replica-set-details.html' "></ng-include>
                     </div>
                   </uib-tab>
                   <uib-tab heading="Environment" active="selectedTab.environment">
-                    <uib-tab-heading>Environment</uib-tab-heading>
+                    <uib-tab-heading>环境</uib-tab-heading>
                     <!--
                       Use the `hasDeployment` filter rather than checking for the `deployment` scope
                       var. This prevents the editor from displaying briefly before the deployment has
@@ -65,7 +65,7 @@
                         Environment variables can be edited on the <a ng-href="{{replicaSet | configURLForResource}}?tab=environment">deployment configuration</a>.
                       </p>
                       <div ng-repeat="container in updatedReplicaSet.spec.template.spec.containers">
-                        <h3>Container {{container.name}} Environment Variables</h3>
+                        <h3>容器 {{container.name}} Environment Variables</h3>
                         <key-value-editor
                           ng-if="container.env.length"
                           entries="container.env"
@@ -130,7 +130,7 @@
                     </deployment-metrics>
                   </uib-tab>
                   <uib-tab ng-if="deploymentConfigName && logOptions.version && ('deploymentconfigs/log' | canI : 'get')" active="selectedTab.logs">
-                    <uib-tab-heading>Logs</uib-tab-heading>
+                    <uib-tab-heading>日志</uib-tab-heading>
                     <log-viewer
                       ng-if="selectedTab.logs"
                       follow-affix-top="390"
@@ -148,7 +148,7 @@
                     </log-viewer>
                   </uib-tab>
                   <uib-tab active="selectedTab.events" ng-if="'events' | canI : 'watch'">
-                    <uib-tab-heading>Events</uib-tab-heading>
+                    <uib-tab-heading>事件</uib-tab-heading>
                     <events resource-kind="{{kind}}" resource-name="{{replicaSet.metadata.name}}" project-context="projectContext" ng-if="selectedTab.events"></events>
                   </uib-tab>
                 </uib-tabset>

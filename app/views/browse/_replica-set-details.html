@@ -80,7 +80,7 @@
 <div class="row">
   <div class="col-lg-6">
     <div class="deployment-detail">
-      <h3>Template</h3>
+      <h3>模版</h3>
       <pod-template
         pod-template="replicaSet.spec.template"
         images-by-docker-reference="imagesByDockerReference"
@@ -151,7 +151,7 @@
 
 <!-- Autoscaling -->
 <div ng-if="!deploymentConfigName || autoscalers.length">
-  <h3>Autoscaling</h3>
+  <h3>弹性伸缩</h3>
 
   <!-- Show any warnings. -->
   <div ng-repeat="warning in hpaWarnings" class="alert alert-warning">

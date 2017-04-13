@@ -50,7 +50,7 @@
             <div class="col-md-12">
               <uib-tabset>
                 <uib-tab active="selectedTab.details">
-                  <uib-tab-heading>Details</uib-tab-heading>
+                  <uib-tab-heading>详情</uib-tab-heading>
                   <div class="resource-details">
                     <dl class="dl-horizontal left">
                       <dt>Selectors:</dt>
@@ -91,7 +91,7 @@
                         </span>
                       </dd>
                     </dl>
-                    <h3>Traffic</h3>
+                    <h3>负载</h3>
                     <div>
                       <traffic-table ports-by-route="portsByRoute" routes="routesForService" services="services" show-node-ports="showNodePorts" custom-name-header="'Route'"></traffic-table>
                     </div>
@@ -106,7 +106,7 @@
                   </div>
                 </uib-tab>
                 <uib-tab active="selectedTab.events" ng-if="'events' | canI : 'watch'">
-                  <uib-tab-heading>Events</uib-tab-heading>
+                  <uib-tab-heading>事件</uib-tab-heading>
                   <events resource-kind="Service" resource-name="{{service.metadata.name}}" project-context="projectContext" ng-if="selectedTab.events"></events>
                 </uib-tab>
               </uib-tabset>

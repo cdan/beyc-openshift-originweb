@@ -86,7 +86,7 @@
               </div>
               <uib-tabset>
                 <uib-tab active="selectedTab.history">
-                  <uib-tab-heading>History</uib-tab-heading>
+                  <uib-tab-heading>历史</uib-tab-heading>
                   <div ng-if="replicaSetsForDeployment | hashSize">
                     <table class="table table-bordered table-hover table-mobile table-layout-fixed">
                       <colgroup>
@@ -123,7 +123,7 @@
                   </div>
                 </uib-tab>
                 <uib-tab active="selectedTab.configuration">
-                  <uib-tab-heading>Configuration</uib-tab-heading>
+                  <uib-tab-heading>配置</uib-tab-heading>
                   <div class="resource-details" ng-if="deployment">
                     <div class="row">
                       <div class="col-lg-6">
@@ -189,7 +189,7 @@
                           </dd>
                         </dl>
 
-                        <h3>Template</h3>
+                        <h3>模版</h3>
                         <pod-template
                             pod-template="deployment.spec.template"
                             images-by-docker-reference="imagesByDockerReference"
@@ -200,7 +200,7 @@
 
                       </div>
                       <div class="col-lg-6">
-                        <h3>Volumes</h3>
+                        <h3>存储卷</h3>
                         <p ng-if="!deployment.spec.template.spec.volumes.length && !({ group: 'extensions', resource: 'deployments' } | canI : 'update')">
                           none
                         </p>
@@ -216,7 +216,7 @@
                           <a ng-href="project/{{project.metadata.name}}/add-config-volume?kind=Deployment&name={{deployment.metadata.name}}&group=extensions">Add Config Files</a>
                         </div>
 
-                        <h3>Autoscaling</h3>
+                        <h3>弹性伸缩</h3>
 
                         <!-- Show any warnings. -->
                         <div ng-repeat="warning in hpaWarnings" class="alert alert-warning">
@@ -251,7 +251,7 @@
                   </div>
                 </uib-tab>
                 <uib-tab heading="Environment" active="selectedTab.environment" ng-if="deployment">
-                  <uib-tab-heading>Environment</uib-tab-heading>
+                  <uib-tab-heading>环境</uib-tab-heading>
                   <ng-form name="forms.deploymentEnvVars">
                     <div ng-repeat="container in updatedDeployment.spec.template.spec.containers">
                       <h3>Container {{container.name}} Environment Variables</h3>
@@ -292,7 +292,7 @@
                   </ng-form>
                 </uib-tab>
                 <uib-tab active="selectedTab.events" ng-if="'events' | canI : 'watch'">
-                  <uib-tab-heading>Events</uib-tab-heading>
+                  <uib-tab-heading>日志</uib-tab-heading>
                   <events resource-kind="Deployment" resource-name="{{deployment.metadata.name}}" project-context="projectContext" ng-if="selectedTab.events"></events>
                 </uib-tab>
               </uib-tabset>

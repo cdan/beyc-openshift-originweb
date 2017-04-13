@@ -25,19 +25,19 @@
               </registry-image-pull>
               <uib-tabset>
                 <uib-tab heading="Details" active="selectedTab.body">
-                  <uib-tab-heading>Details</uib-tab-heading>
+                  <uib-tab-heading>详情</uib-tab-heading>
                   <registry-image-body image="image">
                   </registry-image-body>
                   <registry-image-meta image="image">
                   </registry-image-meta>
                 </uib-tab>
                 <uib-tab heading="Config" active="selectedTab.config">
-                  <uib-tab-heading>Configuration</uib-tab-heading>
+                  <uib-tab-heading>配置</uib-tab-heading>
                   <registry-image-config image="image">
                   </registry-image-config>
                 </uib-tab>
                 <uib-tab heading="Layers" active="selectedTab.meta">
-                  <uib-tab-heading>Layers</uib-tab-heading>
+                  <uib-tab-heading>分层</uib-tab-heading>
                   <p ng-if="!layers.length"><em>No layer information is available for this image.</em></p>
                   <registry-image-layers layers="layers" ng-if="layers.length" class="mar-bottom-xl block">
                   </registry-image-layers>
